@@ -1,13 +1,13 @@
 import React from "react";
 import "./styles.css";
-import { motion } from "framer-motion";
 
 import MainVideo from "./img/MainVideo.png";
 import SCDWlogo from "./img/logo/SCDW.svg";
 import instaLogo from "./img/logo/Instagram.svg";
 import fbLogo from "./img/logo/Facebook.svg";
 import spectrumLogo from "./img/logo/Spectrum.svg";
-import Arrow from "./img/Arrow.svg";
+
+import { SpeakerList } from "./components/SpeakerCard";
 
 export default function App() {
   const test = [
@@ -15,7 +15,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     },
@@ -23,7 +23,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     },
@@ -31,7 +31,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     },
@@ -39,7 +39,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     },
@@ -47,7 +47,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     },
@@ -55,7 +55,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     },
@@ -63,7 +63,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     },
@@ -71,7 +71,7 @@ export default function App() {
       date: "11/23",
       speaker: "김지홍",
       company: "디자인 스펙트럼",
-      title: "스펙트럼콘 디자인 위크 2020",
+      title: "디자인 위크 2020",
       time: "18:00-20:00",
       link: "url"
     }
@@ -104,20 +104,7 @@ export default function App() {
             <div className="heading-1">Program</div>
           </div>
           <div className="body-1">2주간 진행되는 다양한 세션을 들어보세요.</div>
-          <div
-            style={{
-              marginTop: 80,
-              display: "grid",
-              gridRowGap: 72,
-              gridTemplateColumns: "max-content max-content",
-              gridColumnGap: 120,
-              marginBottom: 80
-            }}
-          >
-            {test.map((x, i) => {
-              return <SpeakerCard data={x} key={i} />;
-            })}
-          </div>
+          <SpeakerList data={test} />
         </Page>
       </div>
       <Footer />
@@ -154,68 +141,6 @@ export function Page({ children, center }) {
   return (
     <div className={center ? "container-center-page" : "container-full-page"}>
       <div>{children}</div>
-    </div>
-  );
-}
-
-export function SpeakerCard({ data }) {
-  return (
-    <div
-      style={{
-        position: "relative",
-        height: 278
-      }}
-    >
-      <div
-        style={{
-          position: "absolute",
-          width: 480,
-          height: 260,
-          backgroundColor: "rgba(255, 255, 255, 0.1)",
-          left: 0,
-          top: 18,
-          backdropFilter: "blur(100px)"
-        }}
-      ></div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto 185px",
-          width: 500,
-          position: "relative"
-        }}
-      >
-        <div style={{ marginTop: 40, marginLeft: 30 }}>
-          <div>{data.date}</div>
-          <div
-            style={{
-              display: "grid",
-              gridGap: 4,
-              marginTop: 30
-            }}
-          >
-            <div>
-              {data.speaker}, {data.company}
-            </div>
-            <div>{data.title}</div>
-            <div>{data.time}</div>
-          </div>
-        </div>
-        <div style={{ width: 185, height: 185, backgroundColor: "#999" }}></div>
-        <motion.div
-          style={{
-            position: "absolute",
-            width: 72,
-            height: 72,
-            // backgroundColor: "blue",
-            right: 0,
-            top: 164
-          }}
-          whileHover={{ x: 20 }}
-        >
-          <img src={Arrow} alt={"arrow"} />
-        </motion.div>
-      </div>
     </div>
   );
 }
