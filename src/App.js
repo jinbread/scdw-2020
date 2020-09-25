@@ -1,9 +1,7 @@
 import React from "react";
 import "./styles.css";
-import MainVideo from "./img/MainVideo.png";
 
-import spectrumSymbol from "./img/spectrum_symbol.svg";
-import spectrumTypo from "./img/spectrum_typo.svg";
+import MainVideo from "./img/MainVideo.png";
 import SCDWlogo from "./img/logo/SCDW.svg";
 import instaLogo from "./img/logo/Instagram.svg";
 import fbLogo from "./img/logo/Facebook.svg";
