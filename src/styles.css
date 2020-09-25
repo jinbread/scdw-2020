@@ -61,10 +61,15 @@ body {
   align-items: center;
 }
 
-.container-page {
+.container-center-page {
   height: 80vh;
   display: flex;
   align-items: center;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.container-full-page {
   margin-left: 80px;
   margin-right: 80px;
 }
