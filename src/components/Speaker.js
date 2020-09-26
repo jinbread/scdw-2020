@@ -57,16 +57,8 @@ export function SpeakerPage({ data, myRef }) {
 
 export function SpeakerList({ data }) {
   return (
-    <div
-      style={{
-        marginTop: 80,
-        display: "grid",
-        gridTemplateColumns: "max-content max-content",
-        gridColumnGap: 120,
-        marginBottom: 80
-      }}
-    >
-      <div style={{ display: "grid", gridRowGap: 72, marginBottom: 100 }}>
+    <div className="speaker-list-container">
+      <div className="speaker-list-left">
         {data
           .filter((x, i) => i % 2 === 0)
           .map((x, i) => {
@@ -77,7 +69,7 @@ export function SpeakerList({ data }) {
             );
           })}
       </div>
-      <div style={{ display: "grid", gridRowGap: 72, marginTop: 100 }}>
+      <div className="speaker-list-right">
         {data
           .filter((x, i) => i % 2 === 1)
           .map((x, i) => {
@@ -94,32 +86,12 @@ export function SpeakerList({ data }) {
 
 export function SpeakerCard({ data }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      style={{
-        position: "relative",
-        height: 278
-      }}
-    >
+    <motion.div whileHover={{ scale: 1.1 }} className="speaker-card-container">
       <div className="speaker-card-bg"></div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto 185px",
-          width: 500,
-          gridGap: 24,
-          position: "relative"
-        }}
-      >
-        <div style={{ marginTop: 40, marginLeft: 30 }}>
+      <div className="speaker-card-wrapper">
+        <div className="speaker-card-content">
           <div className="speaker-card-small-text-3">{data.date}</div>
-          <div
-            style={{
-              display: "grid",
-              gridGap: 4,
-              marginTop: 30
-            }}
-          >
+          <div className="speaker-card-info">
             <div className="speaker-card-small-text-2">
               {data.speaker}, {data.company}
             </div>
@@ -127,18 +99,8 @@ export function SpeakerCard({ data }) {
             <div className="speaker-card-small-text-4">{data.time}</div>
           </div>
         </div>
-        <div style={{ width: 185, height: 185, backgroundColor: "#999" }}></div>
-        <motion.div
-          style={{
-            position: "absolute",
-            width: 72,
-            height: 72,
-            // backgroundColor: "blue",
-            right: 0,
-            top: 164
-          }}
-          whileHover={{ x: 20 }}
-        >
+        <div className="speaker-card-img"></div>
+        <motion.div className="speaker-card-arrow" whileHover={{ x: 20 }}>
           <img src={Arrow} alt={"arrow"} />
         </motion.div>
       </div>
@@ -150,62 +112,36 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
   return (
     <div className="content">
       <Page>
-        <div
-          style={{
-            marginTop: 80,
-            marginBottom: 80,
-            display: "grid",
-            gridTemplateColumns: "auto max-content"
-          }}
-        >
+        <div className="speaker-page-wrapper">
           <div>
             <div className="speaker-card-large-text-3">{localData.date}</div>
-            <div
-              style={{
-                display: "grid",
-                gridGap: 4,
-                marginTop: 30,
-                marginBottom: 24
-              }}
-            >
+            <div className="speaker-page-info">
               <div className="speaker-card-large-text-2">
                 {localData.speaker}, {localData.company}
               </div>
               <div className="speaker-card-large-text-1">{localData.title}</div>
               <div className="speaker-card-large-text-4">{localData.time}</div>
             </div>
-
             <div className="btn">캘린더에 추가하기</div>
           </div>
-          <div
-            style={{ width: 283, height: 295, backgroundColor: "gray" }}
-          ></div>
+          <div className="speaker-page-img"></div>
         </div>
-        <div style={{ marginBottom: 160 }}>
-          <div style={{ marginBottom: 16 }}>
+        <div className="speaker-page-content-container">
+          <div className="speaker-page-content-title">
             <div className="heading-3">Contents</div>
           </div>
-          <div style={{ display: "grid", gridGap: 40 }}>
+          <div className="speaker-page-content-wrapper">
             {localData.contents.map((x, i) => {
               return (
                 <div key={i}>
                   <div className="heading-2">{x.title}</div>
-                  <div style={{ maxWidth: 940 }}>
-                    <div className="body-1">{x.text}</div>
-                  </div>
+                  <div className="body-1">{x.text}</div>
                 </div>
               );
             })}
           </div>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "max-content max-content",
-            gridGap: 120,
-            marginBottom: 80
-          }}
-        >
+        <div className="speaker-page-nav-wrapper">
           {index !== 0 && (
             <div>
               <div className="heading-2">이전 프로그램</div>
@@ -217,7 +153,6 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
           {index !== globalData.length - 1 && (
             <div>
               <div className="heading-2">다음 프로그램</div>
-
               <NavLink to={globalData[index + 1].link}>
                 <SpeakerCard data={globalData[index + 1]} />
               </NavLink>
