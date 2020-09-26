@@ -6,13 +6,7 @@ import BG1 from "../img/bg1.svg";
 import BG2 from "../img/bg2.svg";
 import BG3 from "../img/bg3.svg";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink
-} from "react-router-dom";
+import { BrowserRouter as NavLink } from "react-router-dom";
 
 export function SpeakerPage({ data }) {
   return (
@@ -74,9 +68,9 @@ export function SpeakerList({ data }) {
     >
       {data.map((x, i) => {
         return (
-          <Link to={x.link} key={i}>
+          <NavLink to={x.link} key={i}>
             <SpeakerCard data={x} />
-          </Link>
+          </NavLink>
         );
       })}
     </div>

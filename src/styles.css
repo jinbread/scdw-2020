@@ -125,7 +125,7 @@ a:visited {
 }
 
 .speaker-card-small-text-1 {
-  font-family: Gordita;
+  /* font-family: Gordita; */
   font-size: 26px;
   font-style: normal;
   font-weight: 700;
@@ -133,7 +133,7 @@ a:visited {
 }
 
 .speaker-card-small-text-2 {
-  font-family: Gordita;
+  /* font-family: Gordita; */
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -141,7 +141,7 @@ a:visited {
 }
 
 .speaker-card-small-text-3 {
-  font-family: Gordita;
+  /* font-family: Gordita; */
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -149,7 +149,7 @@ a:visited {
 }
 
 .speaker-card-small-text-4 {
-  font-family: Gordita;
+  /* font-family: Gordita; */
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
