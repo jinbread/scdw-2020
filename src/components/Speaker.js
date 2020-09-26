@@ -134,9 +134,9 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
   return (
     <div className="content">
       <Page>
-        <NavLink to="/">
+        <Link to="/">
           <div className="heading-1">{localData.speaker}</div>
-        </NavLink>
+        </Link>
         <div
           style={{
             display: "grid",
@@ -147,18 +147,18 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
           {index !== 0 && (
             <div>
               <div className="heading-2">이전 프로그램</div>
-              <NavLink to={`/${globalData[index - 1].link}`}>
+              <Link to={`/${globalData[index - 1].link}`}>
                 <SpeakerCard data={globalData[index - 1]} />
-              </NavLink>
+              </Link>
             </div>
           )}
           {index !== globalData.length - 1 && (
             <div>
               <div className="heading-2">다음 프로그램</div>
 
-              <NavLink to={`/${globalData[index + 1].link}`}>
+              <Link to={`/${globalData[index + 1].link}`}>
                 <SpeakerCard data={globalData[index + 1]} />
-              </NavLink>
+              </Link>
             </div>
           )}
         </div>
