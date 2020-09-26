@@ -1,0 +1,66 @@
+[
+  {
+    "date": "11-XX",
+    "speaker": "Speaker",
+    "company": "Company",
+    "title": "Seminar A",
+    "time": "18:00-20:00",
+    "link": "a"
+  },
+  {
+    "date": "11/23",
+    "speaker": "김지홍",
+    "company": "디자인 스펙트럼",
+    "title": "Seminar B",
+    "time": "18:00-20:00",
+    "link": "b"
+  },
+  {
+    "date": "11/23",
+    "speaker": "김지홍",
+    "company": "디자인 스펙트럼",
+    "title": "Seminar C",
+    "time": "18:00-20:00",
+    "link": "c"
+  },
+  {
+    "date": "11/23",
+    "speaker": "김지홍",
+    "company": "디자인 스펙트럼",
+    "title": "Seminar D",
+    "time": "18:00-20:00",
+    "link": "d"
+  },
+  {
+    "date": "11/23",
+    "speaker": "김지홍",
+    "company": "디자인 스펙트럼",
+    "title": "Seminar E",
+    "time": "18:00-20:00",
+    "link": "e"
+  },
+  {
+    "date": "11/23",
+    "speaker": "김지홍",
+    "company": "디자인 스펙트럼",
+    "title": "Seminar F",
+    "time": "18:00-20:00",
+    "link": "f"
+  },
+  {
+    "date": "11/23",
+    "speaker": "김지홍",
+    "company": "디자인 스펙트럼",
+    "title": "Seminar G",
+    "time": "18:00-20:00",
+    "link": "g"
+  },
+  {
+    "date": "11/23",
+    "speaker": "김지홍",
+    "company": "디자인 스펙트럼",
+    "title": "Seminar H",
+    "time": "18:00-20:00",
+    "link": "h"
+  }
+]
