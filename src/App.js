@@ -1,6 +1,14 @@
 import React from "react";
 import "./styles.css";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
+import testData from "./data";
+
 import MainVideo from "./img/MainVideo.png";
 import SCDWlogo from "./img/logo/SCDW.svg";
 import instaLogo from "./img/logo/Instagram.svg";
@@ -9,14 +17,6 @@ import spectrumLogo from "./img/logo/Spectrum.svg";
 
 import { SpeakerPage, SpeakerPageTemplate } from "./components/Speaker";
 import { Page } from "./components/Page";
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink
-} from "react-router-dom";
-import testData from "./data";
 
 export default function App() {
   return (
@@ -30,7 +30,7 @@ export default function App() {
           </Route>
           {testData.map((x, i) => {
             return (
-              <Route path={`/${x.link}`} key={i}>
+              <Route exact path={`/${x.link}`} key={i}>
                 <SpeakerPageTemplate
                   localData={x}
                   globalData={testData}

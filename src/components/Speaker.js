@@ -1,12 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import Arrow from "../img/Arrow.svg";
 import { Page } from "./Page";
 import BG1 from "../img/bg1.svg";
 import BG2 from "../img/bg2.svg";
 import BG3 from "../img/bg3.svg";
-
-import { BrowserRouter as Link } from "react-router-dom";
 
 export function SpeakerPage({ data }) {
   return (
@@ -68,9 +68,9 @@ export function SpeakerList({ data }) {
     >
       {data.map((x, i) => {
         return (
-          <Link to={x.link} key={i}>
+          <NavLink to={`/${x.link}`} key={i}>
             <SpeakerCard data={x} />
-          </Link>
+          </NavLink>
         );
       })}
     </div>
@@ -134,9 +134,9 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
   return (
     <div className="content">
       <Page>
-        <Link to="/">
+        <NavLink to="/">
           <div className="heading-1">{localData.speaker}</div>
-        </Link>
+        </NavLink>
         <div
           style={{
             display: "grid",
@@ -147,18 +147,18 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
           {index !== 0 && (
             <div>
               <div className="heading-2">이전 프로그램</div>
-              <Link to={`/${globalData[index - 1].link}`}>
+              <NavLink to={globalData[index - 1].link}>
                 <SpeakerCard data={globalData[index - 1]} />
-              </Link>
+              </NavLink>
             </div>
           )}
           {index !== globalData.length - 1 && (
             <div>
               <div className="heading-2">다음 프로그램</div>
 
-              <Link to={`/${globalData[index + 1].link}`}>
+              <NavLink to={globalData[index + 1].link}>
                 <SpeakerCard data={globalData[index + 1]} />
-              </Link>
+              </NavLink>
             </div>
           )}
         </div>
