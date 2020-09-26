@@ -107,6 +107,7 @@ export function SpeakerCard({ data }) {
           display: "grid",
           gridTemplateColumns: "auto 185px",
           width: 500,
+          gridGap: 24,
           position: "relative"
         }}
       >
