@@ -1,13 +1,24 @@
-/* @font-face {
+@font-face {
   font-family: "Gordita-Bold";
-  src: url("gordita-bold.eot");
-  src: url("gordita-bold.eot") format("embedded opentype"),
-    url("gordita-bold.woff2") format("woff2"),
-    url("gordita-bold.woff") format("woff"),
-    url("gordita-bold.ttf") format("truetype");
+  src: url("./fonts/gordita-bold.eot");
+  src: url("./fonts/gordita-bold.eot") format("embedded opentype"),
+    url("./fonts/gordita-bold.woff2") format("woff2"),
+    url("./fonts/gordita-bold.woff") format("woff"),
+    url("./fonts/gordita-bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-} */
+}
+
+@font-face {
+  font-family: "Gordita-Regular";
+  src: url("./fonts/gordita-regular.eot");
+  src: url("./fonts/gordita-regular.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/gordita-regular.woff2") format("woff2"),
+    url("./fonts/gordita-regular.woff") format("woff"),
+    url("./fonts/gordita-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   margin: 0px;
@@ -105,40 +116,32 @@ a:visited {
 }
 
 .heading-1 {
-  /* font-family: "Gordita-Bold"; */
+  font-family: "Gordita-Bold";
   font-size: 60px;
-  font-style: normal;
-  font-weight: 700;
   /* line-height: 84px; */
   letter-spacing: 0em;
   text-align: left;
 }
 
 .heading-2 {
-  /* font-family: "Gordita-Bold"; */
+  font-family: "Gordita-Bold";
   font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 27px;
   letter-spacing: 0em;
   text-align: left;
 }
 
 .heading-3 {
-  /* font-family: Gordita; */
+  font-family: "Gordita-Bold";
   font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 45px;
   letter-spacing: 0em;
   text-align: left;
 }
 
 .body-1 {
-  /* font-family: Gordita; */
+  font-family: "Gordita-Regular";
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 32px;
   letter-spacing: 0em;
   text-align: left;
@@ -148,10 +151,8 @@ a:visited {
   display: inline-block;
   padding: 16px 20px;
   border: 1px solid black;
-  /* font-family: Gordita; */
+  font-family: "Gordita-Bold";
   font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 27px;
   letter-spacing: 0em;
   text-align: left;
