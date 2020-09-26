@@ -166,3 +166,7 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
     </div>
   );
 }
+
+export function SpeakerTest() {
+  return <Router></Router>;
+}
