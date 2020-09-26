@@ -1,4 +1,5 @@
 import React from "react";
+import "./Speaker.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 import { motion } from "framer-motion";
@@ -60,19 +61,34 @@ export function SpeakerList({ data }) {
       style={{
         marginTop: 80,
         display: "grid",
-        gridRowGap: 72,
+        // gridRowGap: 72,
         gridTemplateColumns: "max-content max-content",
         gridColumnGap: 120,
         marginBottom: 80
       }}
     >
-      {data.map((x, i) => {
-        return (
-          <NavLink to={`/${x.link}`} key={i}>
-            <SpeakerCard data={x} />
-          </NavLink>
-        );
-      })}
+      <div style={{ display: "grid", gridRowGap: 72, marginBottom: 100 }}>
+        {data
+          .filter((x, i) => i % 2 === 0)
+          .map((x, i) => {
+            return (
+              <NavLink to={`/${x.link}`} key={i}>
+                <SpeakerCard data={x} />
+              </NavLink>
+            );
+          })}
+      </div>
+      <div style={{ display: "grid", gridRowGap: 72, marginTop: 100 }}>
+        {data
+          .filter((x, i) => i % 2 === 1)
+          .map((x, i) => {
+            return (
+              <NavLink to={`/${x.link}`} key={i}>
+                <SpeakerCard data={x} />
+              </NavLink>
+            );
+          })}
+      </div>
     </div>
   );
 }
@@ -180,7 +196,6 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
                 </div>
               );
             })}
-
           </div>
         </div>
         <div
