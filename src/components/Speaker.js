@@ -134,14 +134,61 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
   return (
     <div className="content">
       <Page>
-        <NavLink to="/">
-          <div className="heading-1">{localData.speaker}</div>
-        </NavLink>
+        <div
+          style={{
+            marginTop: 80,
+            marginBottom: 80,
+            display: "grid",
+            gridTemplateColumns: "auto max-content"
+          }}
+        >
+          <div>
+            <div className="speaker-card-large-text-3">{localData.date}</div>
+            <div
+              style={{
+                display: "grid",
+                gridGap: 4,
+                marginTop: 30,
+                marginBottom: 24
+              }}
+            >
+              <div className="speaker-card-large-text-2">
+                {localData.speaker}, {localData.company}
+              </div>
+              <div className="speaker-card-large-text-1">{localData.title}</div>
+              <div className="speaker-card-large-text-4">{localData.time}</div>
+            </div>
+
+            <div className="btn">캘린더에 추가하기</div>
+          </div>
+          <div
+            style={{ width: 283, height: 295, backgroundColor: "gray" }}
+          ></div>
+        </div>
+        <div style={{ marginBottom: 160 }}>
+          <div style={{ marginBottom: 16 }}>
+            <div className="heading-3">Contents</div>
+          </div>
+          <div style={{ display: "grid", gridGap: 40 }}>
+            {localData.contents.map((x, i) => {
+              return (
+                <div>
+                  <div className="heading-2">{x.title}</div>
+                  <div style={{ maxWidth: 940 }}>
+                    <div className="body-1">{x.text}</div>
+                  </div>
+                </div>
+              );
+            })}
+
+          </div>
+        </div>
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "max-content max-content",
-            gridGap: 120
+            gridGap: 120,
+            marginBottom: 80
           }}
         >
           {index !== 0 && (
