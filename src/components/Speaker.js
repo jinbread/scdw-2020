@@ -6,7 +6,7 @@ import BG1 from "../img/bg1.svg";
 import BG2 from "../img/bg2.svg";
 import BG3 from "../img/bg3.svg";
 
-import { BrowserRouter as NavLink, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 export function SpeakerPage({ data }) {
   return (
