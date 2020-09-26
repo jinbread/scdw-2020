@@ -9,9 +9,9 @@ import BG1 from "../img/bg1.svg";
 import BG2 from "../img/bg2.svg";
 import BG3 from "../img/bg3.svg";
 
-export function SpeakerPage({ data }) {
+export function SpeakerPage({ data, myRef }) {
   return (
-    <Page center={false}>
+    <Page center={false} myRef={myRef} marginBottom={160}>
       <div className="title">
         <div className="heading-1">Program</div>
       </div>
