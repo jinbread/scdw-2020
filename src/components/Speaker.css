@@ -1,50 +1,58 @@
 .speaker-card-small-text-1 {
-  font-family: "Gordita-Bold";
+  font-family: "Gordita";
+  font-weight: 700;
   font-size: 26px;
   line-height: 42px;
 }
 
 .speaker-card-small-text-2 {
-  font-family: "Gordita-Bold";
+  font-family: "Gordita";
+  font-weight: 700;
   font-size: 16px;
   line-height: 26px;
 }
 
 .speaker-card-small-text-3 {
-  font-family: "Gordita-Regular";
+  font-family: "Gordita";
+  font-weight: 400;
   font-size: 24px;
   line-height: 38px;
 }
 
 .speaker-card-small-text-4 {
-  font-family: "Gordita-Regular";
+  font-family: "Gordita";
+  font-weight: 400;
   font-size: 18px;
   line-height: 29px;
 }
 
 .speaker-card-large-text-1 {
-  font-family: "Gordita-Bold";
+  font-family: "Gordita";
+  font-weight: 700;
   font-size: 41px;
   line-height: 65px;
   letter-spacing: 0em;
   text-align: left;
 }
 .speaker-card-large-text-2 {
-  font-family: "Gordita-Bold";
+  font-family: "Gordita";
+  font-weight: 700;
   font-size: 25px;
   line-height: 40px;
   letter-spacing: 0em;
   text-align: left;
 }
 .speaker-card-large-text-3 {
-  font-family: "Gordita-Regular";
+  font-family: "Gordita";
+  font-weight: 400;
   font-size: 24px;
   line-height: 38px;
   letter-spacing: 0em;
   text-align: left;
 }
 .speaker-card-large-text-4 {
-  font-family: "Gordita-Regular";
+  font-family: "Gordita";
+  font-weight: 400;
   font-size: 28px;
   line-height: 45px;
   letter-spacing: 0em;

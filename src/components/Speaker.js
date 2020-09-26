@@ -61,7 +61,6 @@ export function SpeakerList({ data }) {
       style={{
         marginTop: 80,
         display: "grid",
-        // gridRowGap: 72,
         gridTemplateColumns: "max-content max-content",
         gridColumnGap: 120,
         marginBottom: 80
@@ -188,7 +187,7 @@ export function SpeakerPageTemplate({ localData, globalData, index }) {
           <div style={{ display: "grid", gridGap: 40 }}>
             {localData.contents.map((x, i) => {
               return (
-                <div>
+                <div key={i}>
                   <div className="heading-2">{x.title}</div>
                   <div style={{ maxWidth: 940 }}>
                     <div className="body-1">{x.text}</div>
