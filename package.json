@@ -7,12 +7,11 @@
   "dependencies": {
     "drei": "1.5.7",
     "framer-motion": "2.7.4",
-    "next-transpile-modules": "4.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.3",
-    "react-three-fiber": "5.0.1",
+    "react-three-fiber": "4.2.21",
     "three": "0.120.1"
   },
   "devDependencies": {
