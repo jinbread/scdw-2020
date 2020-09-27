@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, useRef } from "react";
 import "./styles.css";
 import { motion } from "framer-motion";
 
@@ -9,6 +9,9 @@ import { SpeakerPageTemplate } from "./components/Speaker";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Home } from "./page/Home";
+
+import { Canvas, useFrame, useLoader } from "react-three-fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const scrollToRef = (ref) => {
   window.scrollTo({ top: ref.current.offsetTop - 120, behavior: "smooth" });
@@ -50,7 +53,9 @@ export default function App() {
               speakerRef={speakerRef}
               cocRef={cocRef}
               FAQRef={FAQRef}
-            />
+            >
+              <GlitchPage />
+            </Home>
           </Route>
           {contentData.map((x, i) => {
             return (
@@ -67,5 +72,35 @@ export default function App() {
         <Footer />
       </div>
     </Router>
+  );
+}
+
+function Model(props) {
+  const { scene } = useLoader(GLTFLoader, "glbtest.glb");
+  useFrame(() => (ref.current.rotation.x += 0.01));
+  const ref = useRef();
+
+  return (
+    <group {...props} dispose={null} ref={ref}>
+      <group
+        position={[-150, 0, 200]}
+        rotation={[0, 0.2, 0]}
+        scale={[0.3, 0.3, 0.3]}
+      >
+        <primitive object={scene} />
+      </group>
+    </group>
+  );
+}
+
+export function GlitchPage() {
+  return (
+    <Canvas camera={{ position: [-100, -130, -50] }}>
+      <ambientLight intensity={1} />
+      <pointLight position={[-400, -400, -400]} />
+      <Suspense fallback={null}>
+        <Model />
+      </Suspense>
+    </Canvas>
   );
 }

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { SpeakerPage } from "../components/Speaker";
 import { Page } from "../components/Page";
@@ -6,9 +5,8 @@ import { Page } from "../components/Page";
 import { FAQPage } from "./FAQ";
 import { CoCPage } from "./CoC";
 import { SponsorPage } from "./Sponsor";
-import { GlitchPage } from "./Glitch";
 
-export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
+export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef, children }) {
   return (
     <div className="content">
       <Page center={true}>
@@ -32,9 +30,7 @@ export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
             </div>
           </div>
         </div>
-        <div className="canvas">
-          <GlitchPage />
-        </div>
+        <div className="canvas">{children}</div>
 
         {/* <img className="main-video" src={MainVideo} alt={"video goes here"} /> */}
       </Page>
