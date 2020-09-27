@@ -6,19 +6,62 @@ import { FAQPage } from "./FAQ";
 import { CoCPage } from "./CoC";
 import { SponsorPage } from "./Sponsor";
 
+import { Canvas, useFrame } from "react-three-fiber";
+
+function Box(props) {
+  // This reference will give us direct access to the mesh
+  const mesh = React.useRef();
+
+  // Set up state for the hovered and active state
+  const [hovered, setHover] = React.useState(false);
+  const [active, setActive] = React.useState(false);
+
+  // Rotate mesh every frame, this is outside of React without overhead
+  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
+
+  return (
+    <mesh
+      {...props}
+      ref={mesh}
+      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+      onClick={(e) => setActive(!active)}
+      onPointerOver={(e) => setHover(true)}
+      onPointerOut={(e) => setHover(false)}
+    >
+      <boxBufferGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
+    </mesh>
+  );
+}
+
 export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
   return (
     <div className="content">
       <Page center={true}>
         <div
-          className="heading-1"
           style={{
-            textAlign: "center"
+            textAlign: "center",
+            display: "grid",
+            alignItems: "center",
+            position: "absolute",
+            top: 0,
+            height: "80vh"
           }}
         >
-          SPECTRUM CON 2020 <br /> DESIGN WEEK <br /> A WHOLE NEW WORLD <br />
-          SPECTRUM CON 2020 <br />
-          DESIGN WEEK <br />A WHOLE NEW WORLD
+          <div>
+            <div className="heading-1">
+              SPECTRUM CON DESIGN WEEK 2020 A WHOLE NEW WORLD SPECTRUM CON
+              DESIGN WEEK 2020 A WHOLE NEW WORLD
+            </div>
+          </div>
+        </div>
+        <div className="canvas">
+          <Canvas>
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <Box position={[-1.2, 0, 0]} />
+            <Box position={[1.2, 0, 0]} />
+          </Canvas>
         </div>
 
         {/* <img className="main-video" src={MainVideo} alt={"video goes here"} /> */}

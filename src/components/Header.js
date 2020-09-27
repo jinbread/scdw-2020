@@ -1,8 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll } from "framer-motion";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
-export function Header({ aboutScroll, speakerScroll, cocScroll, FAQScroll }) {
+export function Header({ children }) {
   return (
     <div className="header">
       <div className="container-header">
@@ -60,18 +60,7 @@ export function Header({ aboutScroll, speakerScroll, cocScroll, FAQScroll }) {
             gridTemplateColumns: "repeat(4, max-content)"
           }}
         >
-          <div className="heading-2" onClick={aboutScroll}>
-            About
-          </div>
-          <div className="heading-2" onClick={speakerScroll}>
-            Program
-          </div>
-          <div className="heading-2" onClick={cocScroll}>
-            CoC
-          </div>
-          <div className="heading-2" onClick={FAQScroll}>
-            FAQ
-          </div>
+          {children}
         </div>
         <div className="btn" style={{ justifySelf: "end" }}>
           참가신청
