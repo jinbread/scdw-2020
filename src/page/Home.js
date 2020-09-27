@@ -9,31 +9,7 @@ import { SponsorPage } from "./Sponsor";
 export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef, children }) {
   return (
     <div className="content">
-      <Page center={true}>
-        <div
-          style={{
-            textAlign: "center",
-            display: "grid",
-            alignItems: "center",
-            position: "absolute",
-            top: 0,
-            height: "80vh"
-          }}
-        >
-          <div>
-            <div
-              className="heading-1"
-              style={{ fontWeight: 400, fontSize: "5em", textAlign: "center" }}
-            >
-              SPECTRUM CON DESIGN WEEK 2020 A WHOLE NEW WORLD SPECTRUM CON
-              DESIGN WEEK 2020 A WHOLE NEW WORLD
-            </div>
-          </div>
-        </div>
-        <div className="canvas">{children}</div>
-
-        {/* <img className="main-video" src={MainVideo} alt={"video goes here"} /> */}
-      </Page>
+      
       <Page center={true} myRef={aboutRef}>
         <div className="title">
           <div className="heading-1">
