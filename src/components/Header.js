@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 export function Header({ children }) {
