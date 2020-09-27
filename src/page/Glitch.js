@@ -20,6 +20,7 @@ function Test() {
         scale={[0.3, 0.3, 0.3]}
         castShadow
         receiveShadow
+        dispose={null}
       />
     </group>
   );
