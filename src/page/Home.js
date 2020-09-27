@@ -102,17 +102,16 @@ export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
 }
 
 function Test() {
-  const { scene } = useLoader(GLTFLoader, "glbtest.glb");
-  useFrame(() => (ref.current.rotation.x += 0.01));
+  const { scene } = useLoader(GLTFLoader, "Parrot.glb");
+  useFrame(() => (ref.current.rotation.y += 0.01));
   const ref = useRef();
 
   return (
     <group ref={ref}>
       <primitive
         object={scene}
-        position={[-150, 0, 200]}
-        rotation={[0, 0.2, 0]}
-        scale={[0.3, 0.3, 0.3]}
+        rotate={[1.5, 0, 0]}
+        scale={[4, 4, 4]}
         dispose={null}
       />
     </group>
@@ -121,9 +120,9 @@ function Test() {
 
 export function GlitchPage() {
   return (
-    <Canvas camera={{ position: [-100, -130, -50] }}>
+    <Canvas camera={{ position: [5, 5, 5] }}>
       <ambientLight intensity={1} />
-      <pointLight position={[-400, -400, -400]} />
+      <pointLight position={[40, 40, 40]} />
       <Suspense fallback={null}>
         <Test />
       </Suspense>
