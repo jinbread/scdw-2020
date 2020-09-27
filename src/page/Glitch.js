@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls, Html } from "drei";
+// import { OrbitControls, Html } from "drei";
 
 function Test() {
   const gltf = useLoader(GLTFLoader, "glbtest.glb");
@@ -13,7 +13,6 @@ function Test() {
   return (
     <group ref={ref}>
       <primitive
-        key={gltf.scene.uuid}
         object={gltf.scene}
         position={[-150, 0, 200]}
         rotation={[0, 0.2, 0]}
@@ -31,8 +30,8 @@ export function GlitchPage() {
     <Canvas camera={{ position: [-100, -130, -50] }}>
       <ambientLight intensity={1} />
       <pointLight position={[-400, -400, -400]} />
-      <OrbitControls screenSpacePanning />
-      <Suspense fallback={<Html>...</Html>}>
+      {/* <OrbitControls screenSpacePanning /> */}
+      <Suspense fallback={null}>
         <Test />
       </Suspense>
     </Canvas>
