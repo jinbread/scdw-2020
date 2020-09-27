@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "drei": "1.5.7",
     "framer-motion": "2.7.4",
     "next-transpile-modules": "4.1.0",
     "react": "16.13.1",

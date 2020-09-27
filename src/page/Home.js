@@ -24,7 +24,7 @@ export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
           <div>
             <div
               className="heading-1"
-              style={{ fontWeight: 400, fontSize: "6em", textAlign: "center" }}
+              style={{ fontWeight: 400, fontSize: "5em", textAlign: "center" }}
             >
               SPECTRUM CON DESIGN WEEK 2020 A WHOLE NEW WORLD SPECTRUM CON
               DESIGN WEEK 2020 A WHOLE NEW WORLD
