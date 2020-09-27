@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Suspense, useRef } from "react";
+import { Canvas, useFrame, useLoader } from "react-three-fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { SpeakerPage } from "../components/Speaker";
 import { Page } from "../components/Page";
 
 import { FAQPage } from "./FAQ";
 import { CoCPage } from "./CoC";
 import { SponsorPage } from "./Sponsor";
-import { GlitchPage } from "./Glitch";
+// import { GlitchPage } from "./Glitch";
 
 export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
   return (
@@ -96,5 +98,35 @@ export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
       <CoCPage myRef={cocRef} />
       <FAQPage myRef={FAQRef} />
     </div>
+  );
+}
+
+function Test() {
+  const { scene } = useLoader(GLTFLoader, "glbtest.glb");
+  useFrame(() => (ref.current.rotation.x += 0.01));
+  const ref = useRef();
+
+  return (
+    <group ref={ref}>
+      <primitive
+        object={scene}
+        position={[-150, 0, 200]}
+        rotation={[0, 0.2, 0]}
+        scale={[0.3, 0.3, 0.3]}
+        dispose={null}
+      />
+    </group>
+  );
+}
+
+export function GlitchPage() {
+  return (
+    <Canvas camera={{ position: [-100, -130, -50] }}>
+      <ambientLight intensity={1} />
+      <pointLight position={[-400, -400, -400]} />
+      <Suspense fallback={null}>
+        <Test />
+      </Suspense>
+    </Canvas>
   );
 }
