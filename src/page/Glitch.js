@@ -2,7 +2,6 @@ import * as THREE from "three";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-// import testModel from "./glbtest.glb";
 
 function Test() {
   const gltf = useLoader(GLTFLoader, "glbtest.glb");
