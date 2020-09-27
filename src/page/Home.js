@@ -1,14 +1,12 @@
 import * as THREE from "three";
-import React, { Suspense, useRef } from "react";
-import { Canvas, useFrame, useLoader } from "react-three-fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import React from "react";
 import { SpeakerPage } from "../components/Speaker";
 import { Page } from "../components/Page";
 
 import { FAQPage } from "./FAQ";
 import { CoCPage } from "./CoC";
 import { SponsorPage } from "./Sponsor";
-// import { GlitchPage } from "./Glitch";
+import { GlitchPage } from "./Glitch";
 
 export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
   return (
@@ -99,34 +97,5 @@ export function Home({ data, aboutRef, speakerRef, cocRef, FAQRef }) {
       <CoCPage myRef={cocRef} />
       <FAQPage myRef={FAQRef} />
     </div>
-  );
-}
-
-function Test() {
-  const { scene } = useLoader(GLTFLoader, "Parrot.glb");
-  useFrame(() => (ref.current.rotation.y += 0.01));
-  const ref = useRef();
-
-  return (
-    <group ref={ref}>
-      <primitive
-        object={scene}
-        rotate={[1.5, 0, 0]}
-        scale={[4, 4, 4]}
-        dispose={null}
-      />
-    </group>
-  );
-}
-
-export function GlitchPage() {
-  return (
-    <Canvas camera={{ position: [5, 5, 5] }}>
-      <ambientLight intensity={1} />
-      <pointLight position={[40, 40, 40]} />
-      <Suspense fallback={null}>
-        <Test />
-      </Suspense>
-    </Canvas>
   );
 }
