@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Gordita";
   src: url("./fonts/gordita-bold.eot");
   src: url("./fonts/gordita-bold.eot") format("embedded opentype"),
@@ -18,7 +18,7 @@
     url("./fonts/gordita-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 /* @font-face {
   font-family: "Spoqa Han Sans";
@@ -159,7 +159,7 @@ a:visited {
 }
 
 .heading-1 {
-  font-family: "Gordita";
+  /* font-family: "Gordita"; */
   font-weight: 700;
   font-size: 60px;
   /* line-height: 84px; */
@@ -168,7 +168,7 @@ a:visited {
 }
 
 .heading-2 {
-  font-family: "Gordita";
+  /* font-family: "Gordita"; */
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
@@ -177,7 +177,7 @@ a:visited {
 }
 
 .heading-3 {
-  font-family: "Gordita";
+  /* font-family: "Gordita"; */
   font-weight: 700;
   font-size: 32px;
   line-height: 45px;
@@ -186,7 +186,7 @@ a:visited {
 }
 
 .body-1 {
-  font-family: "Gordita";
+  /* font-family: "Gordita"; */
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
