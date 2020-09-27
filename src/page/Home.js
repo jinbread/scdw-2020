@@ -1,4 +1,4 @@
-import * as THREE from "three";
+
 import React from "react";
 import { SpeakerPage } from "../components/Speaker";
 import { Page } from "../components/Page";

@@ -1,3 +1,4 @@
+import * as THREE from "three";
 import React from "react";
 import "./styles.css";
 import { motion } from "framer-motion";

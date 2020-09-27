@@ -1,22 +1,21 @@
-import * as THREE from "three";
 import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-function Test() {
+function Model(props) {
   const { scene } = useLoader(GLTFLoader, "glbtest.glb");
   useFrame(() => (ref.current.rotation.x += 0.01));
   const ref = useRef();
 
   return (
-    <group ref={ref}>
-      <primitive
-        object={scene}
+    <group {...props} dispose={null} ref={ref}>
+      <group
         position={[-150, 0, 200]}
         rotation={[0, 0.2, 0]}
         scale={[0.3, 0.3, 0.3]}
-        dispose={null}
-      />
+      >
+        <primitive object={scene} />
+      </group>
     </group>
   );
 }
@@ -27,7 +26,7 @@ export function GlitchPage() {
       <ambientLight intensity={1} />
       <pointLight position={[-400, -400, -400]} />
       <Suspense fallback={null}>
-        <Test />
+        <Model />
       </Suspense>
     </Canvas>
   );
