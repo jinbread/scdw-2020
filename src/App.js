@@ -17,8 +17,8 @@ const scrollToRef = (ref) => {
   window.scrollTo({ top: ref.current.offsetTop - 120, behavior: "smooth" });
 };
 
-function Model({ props }) {
-  const { scene } = useLoader(GLTFLoader, "./glbtest.glb");
+function Model({ props, url }) {
+  const { scene } = useLoader(GLTFLoader, url);
   useFrame(() => (ref.current.rotation.x += 0.01));
   const ref = useRef();
 
@@ -41,7 +41,7 @@ export function GlitchPage() {
       <ambientLight intensity={1} />
       <pointLight position={[-400, -400, -400]} />
       <Suspense fallback={null}>
-        <Model />
+        <Model url="glbtest.glb" />
       </Suspense>
     </Canvas>
   );
